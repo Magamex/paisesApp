@@ -1,35 +1,6 @@
 <div class="columns">
   <div class="column is-3">
-    <nav class="panel">
-      <p class="panel-heading">
-        Busquedas
-      </p>
-      <a routerLink=""
-         routerLinkActive="is-active"
-         [routerLinkActiveOptions]="{exact: true}"
-         class="panel-block">
-        <span class="panel-icon">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </span>
-        por Pais
-      </a>
-      <a routerLink="region"
-         routerLinkActive="is-active"
-         class="panel-block">
-        <span class="panel-icon">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </span>
-        por Region
-      </a>
-      <a routerLink="capital"
-         routerLinkActive="is-active"
-         class="panel-block">
-        <span class="panel-icon">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </span>
-        por Capital
-      </a>
-    </nav>
+    <app-sidebar></app-sidebar>
   </div>
   <div class="column">
     <router-outlet></router-outlet>
