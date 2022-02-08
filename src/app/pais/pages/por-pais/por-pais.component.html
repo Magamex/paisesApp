@@ -16,12 +16,11 @@
 
 <hr>
 
-<div class="notification is-danger">
-  <button class="delete"></button>
-  No se encontraron resultados.
+<div *ngIf="hayError" class="notification is-danger has-text-centered">
+  No se encontraron resultados con {{ termino }}.
 </div>
 
-<div class="columns">
+<div *ngIf="!hayError" class="columns">
   <div class="column">
     <div class="table-container">
     <table class="table is-fullwidth">
