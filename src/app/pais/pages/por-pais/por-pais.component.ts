@@ -19,6 +19,10 @@ export class PorPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sugerencias(termino:string){
+    this.hayError = false;
+  }
+
   buscar(termino:string){
     this.termino = termino;
     this.hayError = false;
