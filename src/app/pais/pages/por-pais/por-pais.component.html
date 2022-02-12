@@ -3,14 +3,9 @@
 
 <div class="columns">
   <div class="column">
-    <form (ngSubmit)="buscar()" autocomplete="off">
-      <input
-        class="input"
-        type="text"
-        name="termino"
-        placeholder="Buscar Pais..."
-        [(ngModel)]="termino">
-    </form>
+    <app-pais-input
+      (onEnter)="buscar($event)"
+    ></app-pais-input>
   </div>
 </div>
 
@@ -20,34 +15,10 @@
   No se encontraron resultados con {{ termino }}.
 </div>
 
-<div *ngIf="!hayError" class="columns">
+<div *ngIf="paises.length > 0" class="columns">
   <div class="column">
     <div class="table-container">
-    <table class="table is-fullwidth">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Bandera</th>
-          <th>Nombre</th>
-          <th>Poblacion</th>
-          <th>Accion</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let pais of paises; index as i">
-          <td>{{ i+1 }}</td>
-          <td>
-            <img class="small-flag" [src]="pais.flag">
-          </td>
-          <td>{{ pais.name }}</td>
-          <td>{{ pais.population }}</td>
-          <td>
-            <a href="http://">Ver...</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
+      <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </div>
   </div>
 </div>
