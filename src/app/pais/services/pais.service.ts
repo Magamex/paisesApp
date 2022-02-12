@@ -21,4 +21,9 @@ export class PaisService {
     const url = `${this.apiUrl}/capital/${termino}`;
     return this.http.get<Country[]>(url);
   }
+
+  buscarPorCodigo(termino:string):Observable<Country>{
+    const url = `${this.apiUrl}/alpha/${termino}`;
+    return this.http.get<Country>(url);
+  }
 }
