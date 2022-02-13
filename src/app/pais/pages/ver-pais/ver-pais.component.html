@@ -1,1 +1,42 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais else divPais" class="columns is-centered">
+  <div class="column is-half">
+    <div class="ldio-oaghc6xkcvs">
+      <div><div></div><div></div><div></div></div><div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #divPais>
+  <div class="columns">
+    <div class="column is-full">
+      <h1 class="title">Pais: {{ pais.name }}</h1>
+      <h2 class="subtitle">Capital: {{ pais.capital }}</h2>
+      <h3 class="subtitle">Poblacion: {{ pais.population | number }}</h3>
+      <figure class="image is-128x128">
+        <img [src]="pais.flag">
+      </figure>
+      <h3 class="subtitle">Codigo Numerico: {{ pais.numericCode }}</h3>
+      <h3 class="subtitle">Codigo Alpha3: {{ pais.alpha3Code }}</h3>
+
+      <h1 class="title">Traducciones</h1>
+      <span class="tag is-black mr-1">{{pais.translations.de}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.es}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.fr}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.ja}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.it}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.br}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.pt}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.nl}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.hr}}</span>
+      <span class="tag is-black mr-1">{{pais.translations.fa}}</span>
+    </div>
+
+  </div>
+
+  <pre class="mt-5">
+    {{ pais | json }}
+  </pre>
+</ng-template>
+
+
+
