@@ -7,13 +7,24 @@
   <div class="column">
       <!-- Opcion 1-->
       <!-- [class.is-active]="region === regionActiva" -->
+      <!-- Opcion Mas Eficiente - Esto se puede mover a una funcion-->
+      <!-- [class]="(region === regionActiva)?'button is-primary':'button'" -->
+      <!-- [class]="getClaseCSS(region)" -->
     <button class="button mr-1"
       [ngClass]="{
         'is-primary': region === regionActiva
       }"
       *ngFor="let region of regiones"
       (click)="activarRegion(region)">
-      {{ region }}
+      {{ region | titlecase }}
     </button>
+  </div>
+</div>
+
+<div *ngIf="paises.length > 0" class="columns">
+  <div class="column">
+    <div class="table-container">
+      <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
   </div>
 </div>
