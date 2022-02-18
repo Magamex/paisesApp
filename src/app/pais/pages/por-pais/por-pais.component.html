@@ -12,6 +12,13 @@
     </div>
   </div>
 
+  <div *ngIf="paisesSugeridos.length > 0" class="panel list-group">
+    <a [routerLink]="['/pais', pais.alpha2Code]" *ngFor="let pais of paisesSugeridos" class="panel-block list-group-item">
+      {{ pais.name }}
+    </a>
+    <a (click)="buscarSugerido(termino)" class="panel-block list-group-item">Buscar "{{ termino }}"</a>
+  </div>
+
   <hr>
 </div>
 
